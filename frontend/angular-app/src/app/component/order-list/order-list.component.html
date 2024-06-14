@@ -1,0 +1,14 @@
+<div>
+    <input 
+      type="text" 
+      [(ngModel)]="searchName" 
+      placeholder="Search by order name"
+    />
+    <button (click)="fetchOrders()">Search</button>
+    <ul>
+      <li *ngFor="let order of orders">
+        {{ order.orderName }} - {{ order.orderStatus }}
+        <button (click)="handleCheckout(order.orderId)">Checkout</button>
+      </li>
+    </ul>
+  </div>
